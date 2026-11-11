@@ -1,0 +1,1686 @@
+/* =====================================================
+   CALCULADORA PREMIUM
+   Samuel Linhares
+===================================================== */
+
+:root{
+
+    --primary:#6C63FF;
+    --primary-dark:#4D44DB;
+    --secondary:#7B7BFF;
+    --accent:#4FC3F7;
+
+    --background:#0F172A;
+    --background-2:#111827;
+    --background-3:#1E293B;
+
+    --card:#182235;
+    --card-2:#202D44;
+
+    --white:#FFFFFF;
+    --text:#E5E7EB;
+    --text-light:#94A3B8;
+
+    --success:#00E676;
+    --danger:#FF6584;
+
+    --gradient:
+    linear-gradient(135deg,#6C63FF,#4D44DB);
+
+    --shadow:
+    0 20px 60px rgba(0,0,0,.45);
+
+    --transition:.35s;
+
+}
+
+/* ===================================================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+color:var(--white);
+
+background:
+
+radial-gradient(circle at top left,
+rgba(108,99,255,.28),
+transparent 35%),
+
+radial-gradient(circle at bottom right,
+rgba(77,68,219,.22),
+transparent 35%),
+
+linear-gradient(
+135deg,
+#09111f,
+#0f172a,
+#111827,
+#1b2843
+);
+
+background-attachment:fixed;
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+overflow-x:hidden;
+
+}
+
+/* ===================================================== */
+/* Fundo animado */
+/* ===================================================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(#ffffff15 1px,transparent 1px);
+
+background-size:35px 35px;
+
+opacity:.35;
+
+pointer-events:none;
+
+animation:particles 45s linear infinite;
+
+}
+
+@keyframes particles{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(-200px);
+
+}
+
+}
+
+/* ===================================================== */
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+section{
+
+padding:80px 20px;
+
+}
+
+.section-title{
+
+max-width:1200px;
+
+margin:auto auto 60px;
+
+text-align:center;
+
+}
+
+.section-title span{
+
+display:inline-block;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+background:rgba(108,99,255,.15);
+
+border:1px solid rgba(108,99,255,.35);
+
+color:#A5B4FC;
+
+font-size:.9rem;
+
+font-weight:600;
+
+margin-bottom:18px;
+
+}
+
+.section-title h2{
+
+font-size:2.4rem;
+
+font-weight:700;
+
+line-height:1.3;
+
+}
+
+/* ===================================================== */
+/* HEADER */
+/* ===================================================== */
+
+.glass-header{
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+background:rgba(8,15,29,.75);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.navbar{
+
+max-width:1250px;
+
+margin:auto;
+
+padding:18px 25px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.nav-logo{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.logo-text{
+
+width:48px;
+
+height:48px;
+
+border-radius:12px;
+
+background:var(--gradient);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:700;
+
+font-size:1.2rem;
+
+box-shadow:
+
+0 10px 25px rgba(108,99,255,.35);
+
+}
+
+.logo-name{
+
+font-size:1.1rem;
+
+font-weight:600;
+
+background:var(--gradient);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+}
+
+.nav-links{
+
+display:flex;
+
+list-style:none;
+
+gap:25px;
+
+}
+
+.nav-links a{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+transition:var(--transition);
+
+}
+
+.nav-links a:hover{
+
+background:rgba(108,99,255,.18);
+
+transform:translateY(-2px);
+
+color:#fff;
+
+}
+
+/* ===================================================== */
+/* HERO */
+/* ===================================================== */
+
+.hero-project{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:90px 20px 40px;
+
+text-align:center;
+
+}
+
+.project-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:12px 22px;
+
+border-radius:50px;
+
+background:rgba(108,99,255,.15);
+
+border:1px solid rgba(108,99,255,.35);
+
+margin-bottom:30px;
+
+font-weight:600;
+
+}
+
+.hero-project h1{
+
+font-size:4rem;
+
+font-weight:700;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+background:
+
+linear-gradient(90deg,#ffffff,#b7b8ff,#6C63FF);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+}
+
+.hero-project p{
+
+max-width:760px;
+
+margin:auto;
+
+font-size:1.15rem;
+
+line-height:1.9;
+
+color:var(--text);
+
+}
+
+.tech-stack{
+
+margin-top:45px;
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+}
+
+.tech-stack span{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:12px 22px;
+
+border-radius:35px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:var(--transition);
+
+}
+
+.tech-stack span:hover{
+
+background:var(--gradient);
+
+transform:translateY(-5px);
+
+box-shadow:
+
+0 15px 30px rgba(108,99,255,.35);
+
+}
+
+/* =====================================================
+   CALCULADORA
+===================================================== */
+
+.calculator-section{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:70px 20px;
+
+position:relative;
+
+}
+
+.calculator-container{
+
+width:100%;
+
+max-width:390px;
+
+padding:28px;
+
+border-radius:28px;
+
+background:
+
+linear-gradient(
+180deg,
+rgba(30,41,59,.96),
+rgba(17,24,39,.98)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+
+0 30px 80px rgba(0,0,0,.55),
+
+0 0 60px rgba(108,99,255,.12),
+
+inset 0 1px 0 rgba(255,255,255,.08);
+
+position:relative;
+
+overflow:hidden;
+
+transition:.35s;
+
+}
+
+.calculator-container:hover{
+
+transform:
+
+translateY(-8px);
+
+box-shadow:
+
+0 40px 90px rgba(0,0,0,.65),
+
+0 0 70px rgba(108,99,255,.35);
+
+}
+
+.calculator-container::before{
+
+content:"";
+
+position:absolute;
+
+left:-30%;
+
+top:-30%;
+
+width:220px;
+
+height:220px;
+
+background:
+
+radial-gradient(circle,
+rgba(108,99,255,.28),
+transparent 70%);
+
+filter:blur(30px);
+
+pointer-events:none;
+
+}
+
+.calculator-container::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+right:0;
+
+top:0;
+
+height:4px;
+
+background:var(--gradient);
+
+}
+
+/* ===================================================== */
+
+.calculator-brand{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:18px;
+
+padding-bottom:14px;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.calculator-name{
+
+font-size:.95rem;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#D1D5DB;
+
+}
+
+.calculator-model{
+
+color:#8EA2FF;
+
+font-weight:700;
+
+font-size:.85rem;
+
+}
+
+/* ===================================================== */
+
+.calculator-screen{
+
+height:120px;
+
+padding:20px;
+
+border-radius:18px;
+
+background:
+
+linear-gradient(
+180deg,
+#090d17,
+#111827
+);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:space-between;
+
+margin-bottom:25px;
+
+border:1px solid rgba(255,255,255,.05);
+
+box-shadow:
+
+inset 0 5px 18px rgba(0,0,0,.45);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.calculator-screen::before{
+
+content:"";
+
+position:absolute;
+
+left:-100%;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.08),
+transparent
+);
+
+animation:shine 6s linear infinite;
+
+}
+
+@keyframes shine{
+
+100%{
+
+left:150%;
+
+}
+
+}
+
+.calculator-operation{
+
+height:22px;
+
+font-size:.95rem;
+
+color:#94A3B8;
+
+font-family:Consolas, monospace;
+
+overflow:hidden;
+
+}
+
+.calculator-result{
+
+font-size:2.8rem;
+
+font-weight:700;
+
+font-family:Consolas, monospace;
+
+color:#ffffff;
+
+letter-spacing:2px;
+
+text-shadow:
+
+0 0 15px rgba(108,99,255,.5);
+
+word-break:break-all;
+
+}
+
+/* ===================================================== */
+
+.calculator-keys{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:14px;
+
+}
+
+.calculator-key{
+
+height:65px;
+
+border:none;
+
+border-radius:16px;
+
+background:#202A40;
+
+color:#fff;
+
+font-size:1.3rem;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.18s;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:
+
+0 8px 18px rgba(0,0,0,.35),
+
+inset 0 1px 0 rgba(255,255,255,.08);
+
+}
+
+.calculator-key::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(255,255,255,.10),
+transparent 60%
+);
+
+opacity:0;
+
+transition:.2s;
+
+}
+
+.calculator-key:hover::before{
+
+opacity:1;
+
+}
+
+.calculator-key:hover{
+
+transform:
+
+translateY(-4px)
+scale(1.04);
+
+filter:brightness(1.08);
+
+}
+
+.calculator-key:active{
+
+transform:
+
+translateY(1px);
+
+}
+
+/* ===================================================== */
+
+.key-operator{
+
+background:
+
+linear-gradient(
+135deg,
+#273454,
+#1E2B46
+);
+
+color:#8EA2FF;
+
+}
+
+.key-clear{
+
+background:
+
+linear-gradient(
+135deg,
+#472544,
+#37203A
+);
+
+color:#FF6584;
+
+}
+
+.key-delete{
+
+background:
+
+linear-gradient(
+135deg,
+#3B2B45,
+#2D2035
+);
+
+color:#F472B6;
+
+}
+
+.key-equals{
+
+grid-column:span 2;
+
+background:var(--gradient);
+
+color:#fff;
+
+font-size:1.5rem;
+
+box-shadow:
+
+0 15px 30px rgba(108,99,255,.35);
+
+}
+
+.key-equals:hover{
+
+box-shadow:
+
+0 20px 40px rgba(108,99,255,.55);
+
+}
+
+/* ===================================================== */
+
+.calculator-footer{
+
+margin-top:22px;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.calculator-solar{
+
+width:140px;
+
+height:22px;
+
+border-radius:6px;
+
+background:
+
+linear-gradient(
+90deg,
+#43311F,
+#5A422C,
+#43311F
+);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.calculator-solar::before{
+
+content:"";
+
+position:absolute;
+
+left:-100%;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.15),
+transparent
+);
+
+animation:shine 5s linear infinite;
+
+}
+
+/* =====================================================
+   SOBRE O PROJETO
+===================================================== */
+
+.project-description{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:90px 25px;
+
+}
+
+.description-content{
+
+max-width:900px;
+
+margin:40px auto 0;
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+.description-content p{
+
+font-size:1.08rem;
+
+line-height:1.9;
+
+color:var(--text);
+
+text-align:center;
+
+}
+
+/* =====================================================
+   FUNCIONALIDADES
+===================================================== */
+
+.project-features{
+
+max-width:1300px;
+
+margin:auto;
+
+padding:90px 25px;
+
+}
+
+.feature-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:28px;
+
+margin-top:55px;
+
+}
+
+.feature-card{
+
+background:
+
+linear-gradient(
+180deg,
+rgba(255,255,255,.05),
+rgba(255,255,255,.03)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+padding:35px;
+
+text-align:center;
+
+transition:.35s;
+
+backdrop-filter:blur(15px);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.feature-card::before{
+
+content:"";
+
+position:absolute;
+
+left:-100%;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.08),
+transparent
+);
+
+transition:.7s;
+
+}
+
+.feature-card:hover::before{
+
+left:120%;
+
+}
+
+.feature-card:hover{
+
+transform:
+
+translateY(-10px);
+
+border-color:#6C63FF;
+
+box-shadow:
+
+0 25px 45px rgba(108,99,255,.18);
+
+}
+
+.feature-card i{
+
+font-size:2.7rem;
+
+margin-bottom:22px;
+
+background:var(--gradient);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+}
+
+.feature-card h3{
+
+margin-bottom:15px;
+
+font-size:1.3rem;
+
+}
+
+.feature-card p{
+
+color:var(--text-light);
+
+line-height:1.7;
+
+}
+
+/* =====================================================
+   TECNOLOGIAS
+===================================================== */
+
+.technologies{
+
+max-width:1300px;
+
+margin:auto;
+
+padding:90px 25px;
+
+}
+
+.technology-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+margin-top:55px;
+
+}
+
+.technology-card{
+
+padding:35px;
+
+border-radius:22px;
+
+background:
+
+linear-gradient(
+180deg,
+rgba(30,41,59,.95),
+rgba(17,24,39,.95)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.35s;
+
+text-align:center;
+
+}
+
+.technology-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+
+0 20px 45px rgba(108,99,255,.18);
+
+border-color:#6C63FF;
+
+}
+
+.technology-card i{
+
+font-size:3.5rem;
+
+margin-bottom:25px;
+
+background:var(--gradient);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+}
+
+.technology-card h3{
+
+margin-bottom:18px;
+
+font-size:1.4rem;
+
+}
+
+.technology-card p{
+
+line-height:1.8;
+
+color:var(--text-light);
+
+}
+
+/* =====================================================
+   ESTATÍSTICAS
+===================================================== */
+
+.project-stats{
+
+max-width:1200px;
+
+margin:30px auto 90px;
+
+padding:0 25px;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+}
+
+.stat-card{
+
+padding:35px;
+
+border-radius:20px;
+
+text-align:center;
+
+background:
+
+linear-gradient(
+180deg,
+rgba(255,255,255,.05),
+rgba(255,255,255,.03)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-8px);
+
+background:
+
+linear-gradient(
+135deg,
+rgba(108,99,255,.18),
+rgba(77,68,219,.12)
+);
+
+}
+
+.stat-card h3{
+
+font-size:2rem;
+
+margin-bottom:10px;
+
+background:var(--gradient);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+}
+
+.stat-card span{
+
+color:var(--text-light);
+
+font-size:1rem;
+
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.glass-footer{
+
+margin-top:80px;
+
+background:
+
+rgba(10,15,30,.88);
+
+backdrop-filter:blur(18px);
+
+border-top:1px solid rgba(255,255,255,.08);
+
+padding:60px 25px 25px;
+
+}
+
+.footer-content{
+
+max-width:1200px;
+
+margin:auto;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+}
+
+.footer-logo{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.footer-logo h3{
+
+font-size:1.4rem;
+
+margin-bottom:6px;
+
+}
+
+.footer-logo p{
+
+color:var(--text-light);
+
+}
+
+.footer-links{
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.footer-links a{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:14px 22px;
+
+border-radius:40px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+background:var(--gradient);
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 15px 35px rgba(108,99,255,.35);
+
+}
+
+.footer-bottom{
+
+max-width:1200px;
+
+margin:50px auto 0;
+
+padding-top:30px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+text-align:center;
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+.footer-bottom p{
+
+color:var(--text-light);
+
+line-height:1.7;
+
+}
+
+.footer-bottom strong{
+
+color:#fff;
+
+}
+
+/* =====================================================
+   ANIMAÇÕES
+===================================================== */
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.hero-project,
+.calculator-container,
+.project-description,
+.project-features,
+.technologies,
+.project-stats{
+
+animation:fadeUp .9s ease;
+
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#0f172a;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(
+180deg,
+#6C63FF,
+#4D44DB
+);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#7B7BFF;
+
+}
+
+/* =====================================================
+   SELEÇÃO DE TEXTO
+===================================================== */
+
+::selection{
+
+background:#6C63FF;
+
+color:#fff;
+
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media(max-width:992px){
+
+.hero-project h1{
+
+font-size:3rem;
+
+}
+
+.section-title h2{
+
+font-size:2rem;
+
+}
+
+.footer-content{
+
+justify-content:center;
+
+text-align:center;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.nav-links{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+.tech-stack{
+
+justify-content:center;
+
+}
+
+.calculator-container{
+
+max-width:350px;
+
+padding:22px;
+
+}
+
+.calculator-result{
+
+font-size:2.3rem;
+
+}
+
+.calculator-key{
+
+height:58px;
+
+font-size:1.15rem;
+
+}
+
+.feature-grid,
+.technology-grid,
+.project-stats{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-links{
+
+justify-content:center;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero-project{
+
+padding-top:60px;
+
+}
+
+.hero-project h1{
+
+font-size:2.4rem;
+
+}
+
+.hero-project p{
+
+font-size:1rem;
+
+}
+
+.section-title h2{
+
+font-size:1.7rem;
+
+}
+
+.calculator-container{
+
+max-width:100%;
+
+}
+
+.calculator-key{
+
+height:55px;
+
+font-size:1rem;
+
+}
+
+.logo-name{
+
+display:none;
+
+}
+
+.footer-logo{
+
+justify-content:center;
+
+text-align:center;
+
+flex-direction:column;
+
+}
+
+}
+
+/* =====================================================
+   PEQUENOS EFEITOS
+===================================================== */
+
+button,
+a{
+
+transition:.25s ease;
+
+}
+
+button:focus,
+a:focus{
+
+outline:none;
+
+box-shadow:
+
+0 0 0 3px rgba(108,99,255,.35);
+
+}
+
+.calculator-result{
+
+transition:.25s;
+
+}
+
+.calculator-screen:hover .calculator-result{
+
+text-shadow:
+
+0 0 20px rgba(108,99,255,.75);
+
+}
+
+.feature-card:hover i,
+.technology-card:hover i{
+
+transform:scale(1.08);
+
+transition:.3s;
+
+}
+
+.logo-text{
+
+transition:.35s;
+
+}
+
+.logo-text:hover{
+
+transform:rotate(10deg) scale(1.08);
+
+box-shadow:
+
+0 20px 40px rgba(108,99,255,.45);
+
+}

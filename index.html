@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Premium | Samuel Linhares</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/Calculadora-CSS.css">
+</head>
+
+<body>
+
+<header class="glass-header">
+
+    <nav class="navbar">
+
+        <div class="nav-logo">
+
+            <div class="logo-text">
+                SL
+            </div>
+
+            <div class="logo-name">
+                Samuel Linhares
+            </div>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+
+                <a href="https://samuelhermsdorff.github.io/MeuSitePessoal/">
+
+                    <i class="fas fa-arrow-left"></i>
+
+                    Voltar ao Portfólio
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<section class="hero-project">
+
+    <div class="hero-content">
+
+        <span class="project-badge">
+
+            <i class="fas fa-code"></i>
+
+            Projeto Front-end
+
+        </span>
+
+        <h1>
+
+            Calculadora Premium
+
+        </h1>
+
+        <p>
+
+            Uma calculadora moderna desenvolvida para demonstrar conhecimentos em
+            HTML5, CSS3 e JavaScript puro.
+
+            O projeto utiliza uma interface responsiva,
+            design inspirado em Glassmorphism,
+            animações suaves e manipulação dinâmica do DOM.
+
+        </p>
+
+        <div class="tech-stack">
+
+            <span>
+
+                <i class="fab fa-html5"></i>
+
+                HTML5
+
+            </span>
+
+            <span>
+
+                <i class="fab fa-css3-alt"></i>
+
+                CSS3
+
+            </span>
+
+            <span>
+
+                <i class="fab fa-js"></i>
+
+                JavaScript
+
+            </span>
+
+            <span>
+
+                <i class="fas fa-mobile-alt"></i>
+
+                Responsivo
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<main class="calculator-section">
+
+<div class="calculator-container">
+
+<div class="calculator-brand">
+
+<div class="calculator-name">
+
+CALCULADORA PREMIUM
+
+</div>
+
+<div class="calculator-model">
+
+SL-3000
+
+</div>
+
+</div>
+
+<div class="calculator-screen">
+
+<div
+class="calculator-operation"
+id="operation">
+
+</div>
+
+<div
+class="calculator-result"
+id="result">
+
+0
+
+</div>
+
+</div>
+
+<div class="calculator-keys">
+
+<button class="calculator-key key-clear"
+onclick="clearAll()">
+
+AC
+
+</button>
+
+<button class="calculator-key key-delete"
+onclick="deleteLast()">
+
+DEL
+
+</button>
+
+<button class="calculator-key key-operator"
+onclick="appendOperator('%')">
+
+%
+
+</button>
+
+<button class="calculator-key key-operator"
+onclick="appendOperator('/')">
+
+÷
+
+</button>
+
+<button class="calculator-key"
+onclick="appendNumber('7')">
+
+7
+
+</button>
+
+<button class="calculator-key"
+onclick="appendNumber('8')">
+
+8
+
+</button>
+
+<button class="calculator-key"
+onclick="appendNumber('9')">
+
+9
+
+</button>
+
+<button class="calculator-key key-operator"
+onclick="appendOperator('*')">
+
+×
+
+</button>
+
+<button class="calculator-key"
+onclick="appendNumber('4')">
+
+4
+
+</button>
+
+<button class="calculator-key"
+onclick="appendNumber('5')">
+
+5
+
+</button>
+
+<button class="calculator-key"
+onclick="appendNumber('6')">
+
+6
+
+</button>
+
+<button class="calculator-key key-operator"
+onclick="appendOperator('-')">
+
+−
+
+</button>
+
+<button class="calculator-key"
+onclick="appendNumber('1')">
+
+1
+
+</button>
+
+<button class="calculator-key"
+onclick="appendNumber('2')">
+
+2
+
+</button>
+
+<button class="calculator-key"
+onclick="appendNumber('3')">
+
+3
+
+</button>
+
+<button class="calculator-key key-operator"
+onclick="appendOperator('+')">
+
++
+
+</button>
+
+<button class="calculator-key"
+onclick="appendNumber('0')">
+
+0
+
+</button>
+
+<button class="calculator-key"
+onclick="appendNumber('.')">
+
+.
+
+</button>
+
+<button class="calculator-key key-equals"
+onclick="calculate()">
+
+=
+
+</button>
+
+</div>
+
+<div class="calculator-footer">
+
+<div class="calculator-solar"></div>
+
+</div>
+
+</div>
+
+</main>
+
+<section class="project-description">
+
+    <div class="section-title">
+
+        <span>Sobre o Projeto</span>
+
+        <h2>Uma Calculadora Desenvolvida com Tecnologias Web Modernas</h2>
+
+    </div>
+
+    <div class="description-content">
+
+        <p>
+
+            A Calculadora Premium foi desenvolvida para demonstrar conhecimentos
+            em desenvolvimento Front-end utilizando apenas tecnologias nativas da Web.
+
+        </p>
+
+        <p>
+
+            O projeto foi construído utilizando HTML5, CSS3 e JavaScript puro,
+            aplicando conceitos como manipulação do DOM, eventos de teclado,
+            responsividade, animações, transições, Grid Layout,
+            Flexbox e efeitos modernos utilizando Glassmorphism.
+
+        </p>
+
+        <p>
+
+            Além da interface moderna, a aplicação possui suporte ao teclado,
+            cálculos em tempo real e organização completa entre HTML, CSS e
+            JavaScript, seguindo boas práticas de desenvolvimento.
+
+        </p>
+
+    </div>
+
+</section>
+
+<section class="project-features">
+
+    <div class="section-title">
+
+        <span>Funcionalidades</span>
+
+        <h2>Principais Recursos</h2>
+
+    </div>
+
+    <div class="feature-grid">
+
+        <article class="feature-card">
+
+            <i class="fas fa-calculator"></i>
+
+            <h3>Operações Matemáticas</h3>
+
+            <p>
+
+                Soma, subtração, multiplicação,
+                divisão e porcentagem.
+
+            </p>
+
+        </article>
+
+        <article class="feature-card">
+
+            <i class="fas fa-keyboard"></i>
+
+            <h3>Suporte ao Teclado</h3>
+
+            <p>
+
+                Todas as operações podem ser realizadas
+                utilizando atalhos do teclado.
+
+            </p>
+
+        </article>
+
+        <article class="feature-card">
+
+            <i class="fas fa-mobile-screen-button"></i>
+
+            <h3>Responsividade</h3>
+
+            <p>
+
+                Interface adaptada para Desktop,
+                Tablet e Smartphones.
+
+            </p>
+
+        </article>
+
+        <article class="feature-card">
+
+            <i class="fas fa-bolt"></i>
+
+            <h3>Performance</h3>
+
+            <p>
+
+                Código leve, rápido e desenvolvido
+                totalmente em JavaScript puro.
+
+            </p>
+
+        </article>
+
+        <article class="feature-card">
+
+            <i class="fas fa-layer-group"></i>
+
+            <h3>Design Moderno</h3>
+
+            <p>
+
+                Interface inspirada em aplicações
+                premium com Glassmorphism.
+
+            </p>
+
+        </article>
+
+        <article class="feature-card">
+
+            <i class="fas fa-code"></i>
+
+            <h3>Código Organizado</h3>
+
+            <p>
+
+                Projeto dividido entre HTML,
+                CSS e JavaScript para facilitar
+                manutenção e evolução.
+
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<section class="technologies">
+
+    <div class="section-title">
+
+        <span>Tecnologias</span>
+
+        <h2>Tecnologias Utilizadas</h2>
+
+    </div>
+
+    <div class="technology-grid">
+
+        <div class="technology-card">
+
+            <i class="fab fa-html5"></i>
+
+            <h3>HTML5</h3>
+
+            <p>
+
+                Estrutura semântica da aplicação,
+                organização do conteúdo e acessibilidade.
+
+            </p>
+
+        </div>
+
+        <div class="technology-card">
+
+            <i class="fab fa-css3-alt"></i>
+
+            <h3>CSS3</h3>
+
+            <p>
+
+                Flexbox, Grid Layout, animações,
+                transições, Glassmorphism,
+                responsividade e gradientes.
+
+            </p>
+
+        </div>
+
+        <div class="technology-card">
+
+            <i class="fab fa-js"></i>
+
+            <h3>JavaScript</h3>
+
+            <p>
+
+                Manipulação do DOM,
+                lógica matemática,
+                eventos do teclado,
+                validações e cálculos.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="project-stats">
+
+    <div class="stat-card">
+
+        <h3>100%</h3>
+
+        <span>JavaScript Puro</span>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h3>Responsivo</h3>
+
+        <span>Desktop e Mobile</span>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h3>HTML5</h3>
+
+        <span>Estrutura Semântica</span>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h3>CSS3</h3>
+
+        <span>Interface Moderna</span>
+
+    </div>
+
+</section>
+
+<footer class="glass-footer">
+
+    <div class="footer-content">
+
+        <div class="footer-logo">
+
+            <div class="logo-text">
+                SL
+            </div>
+
+            <div>
+
+                <h3>Samuel Linhares</h3>
+
+                <p>
+                    Desenvolvedor Front-end • Java • Web
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="https://samuelhermsdorff.github.io/MeuSitePessoal/">
+                <i class="fas fa-house"></i>
+                Início
+            </a>
+
+            <a href="https://github.com/SamuelHermsdorff/" target="_blank">
+
+                <i class="fab fa-github"></i>
+
+                GitHub
+
+            </a>
+
+            <a href="https://www.linkedin.com/in/samuel-hermsdorff-figueiredo-linhares-9a8aa3368/" target="_blank">
+
+                <i class="fab fa-linkedin"></i>
+
+                LinkedIn
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            Desenvolvido utilizando
+            <strong>HTML5</strong>,
+            <strong>CSS3</strong> e
+            <strong>JavaScript</strong>.
+
+        </p>
+
+        <p>
+
+            © Samuel Hermsdorff Figueiredo Linhares.
+            Todos os direitos reservados.
+
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="javascript/Calculadora-JS.js"></script>
+
+</body>
+</html>
